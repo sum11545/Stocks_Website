@@ -224,7 +224,7 @@ route.get("/bhavCopyReportNew52High/:date", async (req, res) => {
       .filter((d) => d.YEAR_HIGH == d.HIGH_PRICE)
       .map((d) => ({
         SYMBOL: d.SYMBOL,
-        DATE: d.DATE,
+        DATE: new Date(d.DATE).toISOString().split("T")[0],
         YEAR_HIGH: d.YEAR_HIGH,
         HIGH_PRICE: d.HIGH_PRICE,
         SECURITY: d.SECURITY,
