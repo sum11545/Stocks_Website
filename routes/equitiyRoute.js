@@ -312,7 +312,6 @@ route.get("/oneMonthHigh/:date", async (req, res) => {
       to: endDate.toISOString().split("T")[0],
       oneMonthHigh: maxValue,
       dateOfHigh: maxHighRecord.DATE,
-      fullRecord: maxHighRecord,
     });
   } catch (error) {
     console.error("Error checking 1-month highs:", error);
@@ -363,7 +362,6 @@ route.get("/oneMonthLow/:date", async (req, res) => {
       to: endDate.toISOString().split("T")[0],
       oneLowHigh: minValue,
       dateOfHigh: maxMinRecord.DATE,
-      fullRecord: maxMinRecord,
     });
   } catch (error) {
     console.error("Error checking 1-month highs:", error);
